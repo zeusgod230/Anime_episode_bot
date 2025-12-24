@@ -1,7 +1,6 @@
 import logging
 import asyncio
 import sqlite3
-
 from dns import update
 from telegram.constants import ParseMode
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
@@ -11,7 +10,7 @@ from telegram.ext.filters import Caption
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-BOT_TOKEN = "7071663866:AAFfzuV81Dz_7LftrdG45MWjKSWmjSjU_ec"
+BOT_TOKEN = "YOUR_TOKEN"
 SOURCE_CHANNEL_ID = -1002282698270
 REQUIRED_CHANNELS = {
     "public_channels": [
@@ -106,7 +105,7 @@ async def check_subscription(user_id: int, context: CallbackContext) -> bool:
     return True
 
 
-# ✅ Function to Send Subscription Prompt
+#  Function to Send Subscription Prompt
 IMAGE_URL = "https://files.catbox.moe/o9qzow.jpg"  # Replace with your actual image URL
 
 # Dictionary to map channel usernames to button names
@@ -121,7 +120,7 @@ async def send_subscription_prompt(update: Update, context: CallbackContext, use
 
     keyboard = []
 
-    # ✅ Add public channel join buttons
+    # Add public channel join buttons
     public_buttons = [
         InlineKeyboardButton(
             CUSTOM_BUTTON_NAMES.get(channel.strip(), f"📢 {channel.replace('@', '')}"),
@@ -135,7 +134,7 @@ async def send_subscription_prompt(update: Update, context: CallbackContext, use
         for button in public_buttons:
             keyboard.append([button])  # Keep individual rows if only one button
 
-    # ✅ Add private buttons for "Otaku Heavens" and "Manga No Kami"
+    #  Add private buttons for "Otaku Heavens" and "Manga No Kami"
     private_channels = REQUIRED_CHANNELS["private_channels"]
     otaku_heavens = next((ch["invite_link"] for ch in private_channels if ch["name"] == "Otaku Heavens"), None)
     manga_no_kami = next((ch["invite_link"] for ch in private_channels if ch["name"] == "Manga No Kami"), None)
@@ -146,7 +145,7 @@ async def send_subscription_prompt(update: Update, context: CallbackContext, use
     if manga_no_kami:
         keyboard.append([InlineKeyboardButton("𝖬𝖺𝗇𝗀𝖺 𝖭𝗈 𝖪𝖺𝗆𝗂۝", url=manga_no_kami)])
 
-    # 🔄 "Try Again" button
+    #  "Try Again" button
     keyboard.append([InlineKeyboardButton("🔄 Tʀʏ Aɢᴀɪɴ", callback_data="retry_start")])
 
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -168,7 +167,7 @@ async def send_subscription_prompt(update: Update, context: CallbackContext, use
 
 
 
-# ✅ Function to Send Miku Nakano Welcome Message
+#  Function to Send Miku Nakano Welcome Message
 async def send_welcome_message(update: Update, context: CallbackContext, user_id: int):
     """Sends the Miku Nakano-themed welcome message with a clickable Best Friend link."""
 
@@ -205,14 +204,14 @@ async def send_welcome_message(update: Update, context: CallbackContext, user_id
         reply_markup=reply_markup
     )
 
-    print(f"✅ Sent welcome message to {user_id}")
+    print(f" Sent welcome message to {user_id}")
 
 
 
 
 
 
-# ✅ Handling the "Try Again" Button
+#  Handling the "Try Again" Button
 async def try_again(update: Update, context: CallbackContext):
     """Handles the 'Try Again' button to recheck subscription and send appropriate messages."""
     query = update.callback_query
@@ -545,3 +544,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
