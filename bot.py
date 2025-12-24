@@ -18,12 +18,12 @@ REQUIRED_CHANNELS = {
         "@GOD_TERMINATORS"
     ],
     "private_channels": [
-        {"name": "Otaku Heavens", "invite_link": "https://t.me/+6qhrixghrCdhYjI1"},
-        {"name": "Manga No Kami", "invite_link": "https://t.me/+j88zwFMvHBhjOWY9"}
+        {"name": "Otaku Heavens", "invite_link": "https://t.me/+xxxxxxxxx"},
+        {"name": "Manga No Kami", "invite_link": "https://t.me/+xxxxxxxxx"}
     ]
 }
 
-OWNER_ID = 7159587636
+OWNER_ID = 715958xxxx
 DB_FILE = "users.db"
 
 
@@ -544,4 +544,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
