@@ -111,16 +111,16 @@ anime-episode-bot/
 └── README.md
 ```
 ## 🔐 Permissions & Safety
----
+```
 Users must join required channels before accessing content
 Admin-only commands are restricted using OWNER_ID
 Database ensures controlled access
----
+```
 
 ## 🛠️ Future Improvements
----
+```
 Add more anime categories
 Pagination for large episode lists
 Search feature
 Inline query support
----
+```
