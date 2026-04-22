@@ -192,7 +192,7 @@ async def send_welcome_message(update: Update, context: CallbackContext, user_id
     ┠ ◆ 𝗗-𝗗𝗼 𝘆𝗼𝘂 𝗹𝗼𝘃𝗲 𝗮𝗻𝗶𝗺𝗲… 𝗹𝗶𝗸𝗲 𝗜 𝗱𝗼? (´・ω・｀)
     ┗━━━━━━━━━━━━━━━━━━━━⧫"""
 
-    image_url = "https://files.catbox.moe/2bvr5z.jpg"  # Miku Nakano image
+    image_url = "https://files.catbox.moe/2bvr5z.jpg"  
 
     keyboard = [[InlineKeyboardButton(" 「 Anime 」", callback_data="anime_menu")]]
     reply_markup = InlineKeyboardMarkup(keyboard)
